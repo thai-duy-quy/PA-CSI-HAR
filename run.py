@@ -5,7 +5,7 @@ from tqdm import tqdm
 from tensorflow.keras import layers,optimizers
 from sklearn.model_selection import train_test_split
 from models import Two_Stream_Model
-#from visualization_data import draw_acc, draw_loss,draw_confusion_matrix_2
+from visualization_data import draw_acc, draw_loss,draw_confusion_matrix_2
 
 from sklearn.metrics import precision_score, recall_score, f1_score, confusion_matrix
 
@@ -65,27 +65,6 @@ model.compile(optimizer= tf.keras.optimizers.Adam(learning_rate=lr_schedule),
                 metrics=["accuracy"])
 model.summary()
 
-if False:
-    all_true = [1, 1, 4, 3, 4, 3, 0, 5, 0, 0, 0, 3, 3, 4, 0, 0, 0, 0, 4, 3, 0, 2, 3, 0, 2, 4, 5, 1, 2, 4, 5, 4, 3, 3, 3, 2, 3, 1, 2, 1, 1, 0, 2, 1, 4, 5, 3, 5, 1, 0, 1, 1, 1, 0, 1, 1, 2, 0, 4, 5, 2, 0, 4, 2, 0, 0, 0, 1, 4, 1, 0, 5, 3, 2, 5, 2, 1, 4, 0, 0, 0, 5, 0, 5, 5, 2, 2, 4, 5, 0, 5, 5, 0, 0, 1, 0, 2, 1, 4, 5, 2, 1, 1, 4, 2, 0, 3, 1, 2, 5, 1, 5, 5, 2, 2, 0, 2, 4, 4, 4, 0, 3, 5, 2, 2, 5, 3, 2, 5, 3, 2, 3, 5, 3, 1, 2, 4, 3, 1, 1, 1, 3, 0, 3, 0, 5, 4, 5, 5, 0, 0, 5, 4, 2, 4, 3, 4, 2, 2, 5, 3, 0, 0, 3, 3, 2, 3, 0, 0, 2, 4, 3, 2, 4, 5, 5, 1, 0, 1, 4, 3, 2, 1, 2, 4, 5, 4, 4, 5, 3, 2, 1, 0, 5, 3, 4, 1, 5, 2, 1, 5, 3, 5, 3, 4, 0, 2, 4, 2, 0, 0, 2, 4, 0, 1, 2, 1, 0, 2, 4, 3, 1, 3, 1, 2, 1, 4, 4, 4, 1, 3, 3, 0, 2, 5, 1, 0, 3, 5, 0, 5, 4, 3, 5, 2, 0, 1, 3, 2, 4, 1, 4, 2, 0, 1, 0, 2, 1, 1, 2, 0, 3, 1, 1]
-    all_preds =[1, 0, 4, 1, 4, 3, 0, 5, 0, 0, 0, 3, 3, 4, 0, 0, 0, 0, 4, 3, 0, 2, 3, 0, 2, 4, 5, 1, 2, 4, 5, 4, 3, 3, 3, 2, 3, 1, 2, 1, 1, 0, 2, 1, 4, 5, 3, 5, 1, 0, 1, 1, 1, 0, 1, 1, 2, 0, 4, 5, 2, 0, 4, 2, 0, 0, 0, 1, 4, 1, 0, 5, 3, 2, 5, 2, 1, 4, 0, 0, 0, 5, 0, 5, 5, 2, 2, 4, 5, 0, 5, 5, 0, 0, 1, 0, 2, 1, 4, 5, 2, 1, 1, 4, 2, 0, 3, 1, 2, 5, 1, 5, 5, 2, 2, 0, 2, 4, 4, 4, 0, 3, 5, 2, 2, 5, 3, 2, 5, 3, 2, 3, 5, 3, 1, 2, 4, 3, 1, 1, 1, 3, 0, 3, 0, 5, 4, 5, 5, 0, 0, 5, 4, 2, 4, 3, 4, 2, 2, 5, 3, 0, 0, 3, 3, 2, 3, 0, 0, 2, 4, 3, 2, 4, 5, 5, 1, 0, 1, 4, 3, 2, 1, 2, 4, 5, 4, 4, 5, 3, 2, 1, 0, 5, 3, 4, 1, 5, 2, 1, 5, 3, 5, 3, 4, 0, 2, 4, 2, 0, 0, 2, 4, 0, 1, 2, 1, 0, 2, 4, 3, 1, 3, 1, 2, 1, 4, 4, 4, 1, 3, 3, 0, 2, 5, 1, 0, 3, 5, 0, 5, 4, 3, 5, 2, 0, 1, 3, 2, 4, 1, 4, 2, 0, 1, 0, 2, 1, 1, 2, 0, 3, 1, 1]
-    #all_preds= [2, 0, 0, 0, 2, 2, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 4, 0, 2, 2, 2, 0, 0, 0, 0, 2, 0, 0, 2, 2, 2, 0, 0, 0, 2, 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 0, 2, 2, 2, 0, 0, 0, 2, 0, 0, 2, 2, 2, 2, 2, 0, 2, 0, 4, 0, 0, 0, 0, 2, 0, 0, 2, 2, 0, 2, 2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 0, 0, 2, 0, 0, 2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 0, 2, 0, 0, 0, 2, 2, 0, 0, 2, 2, 0, 0, 2, 2, 2, 0, 0, 0, 2, 0, 0, 2, 0, 0, 0, 2, 2, 2, 2, 0, 0, 2, 0, 2, 0, 2, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 2, 0, 0, 0, 0, 2, 0, 2, 0, 2, 0, 2, 0, 0, 0, 0, 2, 0, 0, 2, 0, 0, 0, 0, 2, 0, 0, 0, 2, 2, 0, 0, 2, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 2, 0]
-    draw_confusion_matrix_2(all_true, all_preds)
-    print(len(all_true))
-    print(all_true)
-    print(all_preds)
-    # Calculate Precision, Recall, F1-Score, and Confusion Matrix
-    precision = precision_score(all_true, all_preds, average='weighted')
-    recall = recall_score(all_true, all_preds, average='weighted')
-    f1 = f1_score(all_true, all_preds, average='weighted')
-    conf_matrix = confusion_matrix(all_true, all_preds)
-
-    print(f'Precision: {precision}')
-    print(f'Recall: {recall}')
-    print(f'F1-Score: {f1}')
-    print('Confusion Matrix:')
-    print(conf_matrix)
-    exit()
-
 #read data 
 x_train = np.load('our_data_amp_1000_270_150.npy',allow_pickle=True)
 x_train_1 = np.load('our_data_phase_1000_270_150.npy',allow_pickle=True) #data_1
@@ -117,9 +96,7 @@ for epoch in range(EPOCHS):
         x_batch_1 = x_train_1[start:end]
         y_batch = y_train[start:end]
         loss,acc = model.train_on_batch([x_batch,x_batch_1],y_batch)
-        #loss,acc = model.train_on_batch(x_batch,y_batch)
         acc_train += acc
-    
     acc = acc_train/num_batches
     if best_train < acc:
         best_train = acc
