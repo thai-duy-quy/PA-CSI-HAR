@@ -24,6 +24,9 @@ Data original can be downloaded at:
 1. [MultiEnv](https://github.com/lcsig/Dataset-for-Wi-Fi-based-human-activity-recognition-in-LOS-and-NLOS-indoor-environments): This dataset was collected in three scenarios: line-of-sight (LOS) in both the office and hall, and non-line-of-sight (NLOS).
 2. [StanWiFi](https://github.com/ermongroup/Wifi_Activity_Recognition): This dataset contains continuous CSI data for six activities without precise segmentation timestamps for each sample.
 
+Try to run dataset.py to process the data from original dataset.
+
 Data processed can be downloaded at: [PA-CSI dataset](https://drive.google.com/drive/folders/1fiJBDWDC3WKkD5pLYRwpLCWMXPVzCQ-i?usp=sharing)
+
 
 
