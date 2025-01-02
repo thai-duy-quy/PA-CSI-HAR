@@ -12,12 +12,15 @@ PA-CSI is the library for WiFi CSI HAR that leverages both amplitude and phase f
 
 ## Requirements
 
-1. Install `pytorch` and `torchvision` (we use `pytorch==1.12.0` and `torchvision==0.13.0`).
-2. `pip install -r requirements.txt`
+1. Install `pytorch` and CUDA (we use `torch=2.5.1` and `cu124`).
+2. Install `tensorflow` and CUDA (we use `tensorflow=2.10.0` and `cu124`).
+3. `pip install -r requirements.txt`
 
-**Note that the project runs perfectly in Linux OS (`Ubuntu`). If you plan to use `Windows` to run the codes, you need to modify the all the `/` to `\\` in the code regarding the dataset directory for the CSI data loading.**
+**Note that the project runs perfectly in Windows OS (`Windows`). If you plan to use `Linux` or `Ubuntu` to run the codes, you need to modify some symbols in the code regarding the dataset directory for the CSI data loading.**
 
 ## Run
 ### Download Processed Data
-Please download and organize the [processed datasets](https://drive.google.com/drive/folders/1R0R8SlVbLI1iUFQCzh_mH90H_4CW2iwt?usp=sharing) in this structure:
+Data original can be downloaded at: 
+1. [MultiEnv](https://github.com/lcsig/Dataset-for-Wi-Fi-based-human-activity-recognition-in-LOS-and-NLOS-indoor-environments): This dataset was collected in three scenarios: line-of-sight (LOS) in both the office and hall, and non-line-of-sight (NLOS).
+2. [StanWiFi](https://github.com/ermongroup/Wifi_Activity_Recognition): This dataset contains continuous CSI data for six activities without precise segmentation timestamps for each sample. 
 
