@@ -1,0 +1,14 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: win-64
+keras=2.10.0
+numpy=1.24.1
+python=3.10.14
+scikit-image=0.24.0
+scikit-learn=1.4.2
+tensorflow=2.10.0
+tensorflow-gpu=2.10.0
+torch=2.5.1+cu124=pypi_0
+torchaudio=2.5.1+cu124=pypi_0
+torchvision=0.20.1+cu124=pypi_0
+tqdm=4.66.5=pypi_0
