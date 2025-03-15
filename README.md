@@ -1,6 +1,6 @@
 # Enhanced Wi-Fi Sensing: Leveraging Phase and Amplitude of CSI for Superior Accuracy
 ## Introduction
-PA-CSI is the library for WiFi CSI HAR that leverages both amplitude and phase features from Wi-Fi signals, incorporating attention mechanisms across both temporal and channel dimensions, along with multi-scale convolutional neural networks (CNNs). It is implemented by PyTorch and Tensorflow. Our paper [*Enhanced Wi-Fi Sensing: Leveraging Phase and Amplitude of CSI for Superior Accuracy*](10.20944/preprints202412.2585.v1) that under review process. 
+PA-CSI is the library for WiFi CSI HAR that leverages both amplitude and phase features from Wi-Fi signals, incorporating attention mechanisms across both temporal and channel dimensions, along with multi-scale convolutional neural networks (CNNs). It is implemented by PyTorch and Tensorflow. This is our paper [*Enhanced Human Activity Recognition Using Wi-Fi Sensing: Leveraging Phase and Amplitude with Attention Mechanisms*](10.3390/s25041038). 
 
 ```
 @article{yang2023benchmark,
